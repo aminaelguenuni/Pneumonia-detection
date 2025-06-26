@@ -54,7 +54,7 @@ Place the file in:
 
 ## Project Showcase: 
 
-![Alt text](assets/showcase.jpg)
+![A screenshot of the project output](assets/showcase.png)
 
 # How to Run the Backend Locally
 
