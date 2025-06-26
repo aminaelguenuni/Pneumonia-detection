@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [file, setFile] = useState(null);
@@ -38,23 +39,31 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
-      <h1>Pneumonia Detection App</h1>
-
-      <input type="file" onChange={handleFileChange} />
-      <br /><br />
-
-      <button onClick={handleSubmit}>
-        {loading ? 'Predicting...' : 'Predict'}
-      </button>
-
-      {prediction && (
-        <div style={{ marginTop: '1rem', fontSize: '1.2rem' }}>
-          Prediction: <strong>{prediction}</strong>
-        </div>
-      )}
+  <div className="app-container">
+  <div className="glass-card">
+    <h1>Pneumonia Detection App</h1>
+    
+    <div className="upload-section">
+      <label htmlFor="file-upload" className="file-upload-label">
+        Choose X-ray Image
+      </label>
+      <input id="file-upload" type="file" onChange={handleFileChange} accept="image/*" />
     </div>
-  );
+
+    <button onClick={handleSubmit} disabled={loading}>
+      {loading ? 'Predicting...' : 'Predict'}
+    </button>
+
+    {prediction && (
+      <div className="prediction-text">
+        Prediction: <strong>{prediction}</strong>
+      </div>
+    )}
+  </div>
+</div>
+);
+
+
 }
 
-export default App;
+export default App;  
