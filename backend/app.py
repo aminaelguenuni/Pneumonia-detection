@@ -4,12 +4,14 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+from download_model import download_and_load_model
+
 
 app = Flask(__name__)
 CORS(app)
 
 
-model = tf.keras.models.load_model('pneumonia_classifier_model.h5')
+model = download_and_load_model()
 
 
 
