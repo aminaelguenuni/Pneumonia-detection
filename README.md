@@ -52,6 +52,10 @@ Place the file in:
 
 /backend/model/pneumonia_model.h5
 
+## Project Showcase: 
+
+![Alt text](assets/showcase.jpg)
+
 # How to Run the Backend Locally
 
 1. Clone the repository:
