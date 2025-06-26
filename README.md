@@ -1,4 +1,4 @@
-# Pneumonia Detection API (Flask Backend)
+# Pneumonia Detection Deep Learning Model 
 
 This project presents a full-stack web application for pneumonia detection based on chest X-ray images. The backend is implemented in Python using Flask and serves as the inference API for a custom-trained Convolutional Neural Network (CNN) model. The application enables users to upload chest X-ray images and receive diagnostic predictions (Pneumonia vs Normal) via a simple web interface.
 
@@ -38,40 +38,15 @@ Employed during model training to augment the image dataset, apply real-time tra
 
 Used to handle directory paths and image file management securely within the API logic.
 
-# API Overview
+# React 
 
-The backend exposes a single endpoint used by the frontend to retrieve predictions.
-
-Endpoint: /predict  
-Method: POST  
-Input: Form-data with image file (file key)  
-Output: JSON object containing the predicted class
-
-Example input:
-curl -X POST http://localhost:5000/predict \
-  -F file=@xray_image.jpg
-
-Example output:
-{
-  "prediction": "Pneumonia"
-}
-
-# Folder Structure
-
-backend/
-├── app.py
-├── model/
-│   └── pneumonia_model.h5
-├── utils/
-│   └── preprocess.py
-├── requirements.txt
-└── README.md
+React.js is used to build the frontend user interface of the application. It provides a responsive and interactive experience for users to upload chest X-ray images and view prediction results in real time. React's component-based architecture enables modular, maintainable, and scalable UI development.
 
 # Trained Model
 
 The model is hosted externally due to GitHub’s file size limitations. It must be downloaded manually and placed in the correct directory before running the backend server.
 
-Download the trained model (.h5): https://your-google-drive-link-here
+Download the trained model (.h5): https://drive.google.com/file/d/1GEqdGiinY4xmP1uC70ULR0_O2NhtK0cY/view?usp=sharing
 
 Place the file in:
 
@@ -91,18 +66,16 @@ pip install -r requirements.txt
 4. Start the server:
 python app.py
 
-The backend will run locally on http://localhost:5000
 
 # Developer Notes
 
-- The model was developed and trained personally by the author.
+- The model is based this Kaggle Dataset: https://www.kaggle.com/datasets/tolgadincer/labeled-chest-xray-images
 - All training was conducted in Google Colab using the Kaggle pneumonia dataset.
 - The backend supports secure file upload, preprocessing, and model inference.
-- The project is intended for demonstration and educational purposes only and is not suitable for clinical use without proper medical validation.
+- The project is intended for demonstration and educational purposes only and is not suitable for clinical use.
 
 # Developer
 
 Amina El Guenuni  
-- Responsible for model development, training, and backend API integration  
 - GitHub: https://github.com/aminaelguenuni  
-- LinkedIn: https://www.linkedin.com/in/amina0289/
+- LinkedIn: www.linkedin.com/in/aminael
